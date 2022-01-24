@@ -5,3 +5,5 @@ function TicTacToe(){
     <h2>TicTacToe game</h2>
     )
 }
+
+export default TicTacToe;

@@ -1,9 +1,10 @@
 import './App.css';
+import TicTacToe from './TicTacToe';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="App" data-testid="global-wrapper">
+      <TicTacToe />
     </div>
   );
 }
