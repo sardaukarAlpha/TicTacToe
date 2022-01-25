@@ -12,6 +12,7 @@ function TicTacToe(){
     const [ shouldBeX, setXNext ] = useState(true);
     const nextSymbol = shouldBeX ? "X" : "O";
     const isWinner = defineWinner(squares);
+    console.table(squares);
 
     const renderSquare = (position) => {
         return (
@@ -73,12 +74,6 @@ function TicTacToe(){
             <Restart onClick={() => restart()} />
         </div>
         <div className="history">
-            <h2>Historical moves</h2>
-            {squares.map((x,index) => {
-                return(
-                    <span>{nextSymbol}{' '}played{' '}{x}{' '}at{index}</span>
-                )
-            }) }
         </div>
     </div>
     </>

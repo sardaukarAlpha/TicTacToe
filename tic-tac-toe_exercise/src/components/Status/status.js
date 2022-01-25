@@ -3,7 +3,7 @@ import React from 'react';
 function Status(props){
     const {getStatus} = props;
     return(
-        <div className="getStatus">{getStatus()}</div>
+        <div id="getStatus">{getStatus()}</div>
     )
 }
 
