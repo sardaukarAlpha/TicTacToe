@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TicTacToeSquare from './components/TicTacToeSquare/ticTacToeSquare';
+import TicTacToeBoard from './components/TicTacToeBoard/ticTacToeBoard';
 import Title from './components/Title/title';
 import { defineWinner, isBoardFull  } from './components/common/common';
 import Restart from './components/Restart/restart';
@@ -19,7 +20,6 @@ function TicTacToe(){
           <TicTacToeSquare
             value={squares[position]}
             onClick={() => {
-                debugger;
               if (squares[position] != null || isWinner != null) {
                 return;
               }
@@ -54,21 +54,7 @@ function TicTacToe(){
     <div className="wrapper">
         <div className="game-wrapper">
             <div className="game-board">
-                <div className="squareRow">
-                    {renderSquare(0)}
-                    {renderSquare(1)}
-                    {renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {renderSquare(3)}
-                    {renderSquare(4)}
-                    {renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {renderSquare(6)}
-                    {renderSquare(7)}
-                    {renderSquare(8)}
-                </div>
+                <TicTacToeBoard onClick={renderSquare} />
             </div>
             <Status getStatus={()=>getStatus()} />
             <Restart onClick={() => restart()} />
