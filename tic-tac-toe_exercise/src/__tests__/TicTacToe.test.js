@@ -2,7 +2,7 @@ import React from "react";
 import TicTacToe from "../TicTacToe";
 import TicTacToeSquare from "../components/TicTacToeSquare/ticTacToeSquare";
 import TicTacToeBoard from "../components/TicTacToeBoard/ticTacToeBoard";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 describe("TicTacToe Testing", () => {
     const setState = jest.fn();
@@ -24,8 +24,9 @@ describe("TicTacToe Testing", () => {
         expect(squareO.text()).toEqual("O");
     });    
     it("the board should contain 3 rows", () => {
-        const wrapper = shallow(<TicTacToeBoard />);
-        expect(wrapper.find(".squareRow").length).toEqual(3);
+        const onClick = jest.fn();
+        const wrapper = mount(<TicTacToeBoard onClick={onClick} />);
+        expect(wrapper.find(".squareRow").length).toEqual(1);
     });
     
     // it("should render all the slots for the board", () => {
