@@ -43,8 +43,8 @@ describe("TicTacToe Testing", () => {
         expect(wrapper.find(".square").exists()).toBeTruthy();
     });
     
-    // it("should have nine squares", () => {
-    //     const board = mount(<Board squares={Array(9).fill(null)} />);
+    test("should have nine squares", () => {
+        const wrapper = mount(<TicTacToeBoard squares={Array(9).fill(null)} />);
     
     //     expect(board.find("#squareDiv").length).toEqual(9);
     // });
