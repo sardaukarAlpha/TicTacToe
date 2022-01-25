@@ -40,6 +40,11 @@ describe("TicTacToe Testing", () => {
         const wrapper = shallow(<TicTacToeSquare className={classy} value={value} onClick={onClick} />)
         expect(wrapper.find(".square").exists()).toBeTruthy();
     });
+
+    test("should have null as value when is loaded", () => {
+        const squareX = shallow(<TicTacToeSquare value="null" />);
+        expect(squareX.text()).toEqual("null");
+    });
     
     // test("initializes the square state with null", () => {
     //     jest.spyOn(React, 'useState').mockImplementation(useStateMock);
