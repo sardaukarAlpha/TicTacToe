@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TicTacToeBoard(props){
+function TicTacToeBoard( props ){
     const { onClick } = props;
     return(
         <>
