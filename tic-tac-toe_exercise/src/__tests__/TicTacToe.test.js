@@ -35,9 +35,9 @@ describe("TicTacToe Testing", () => {
         expect(onClick).toBeCalled();
     });
     
-    // it("should render all the slots for the board", () => {
-    //     expect(board.find(".squareinit").exists()).toBeTruthy();
-    // });
+    test("should render all the slots for the board", () => {
+        expect(TicTacToeSquare.find(".square").exists()).toBeTruthy();
+    });
     
     // it("should have nine squares", () => {
     //     const board = mount(<Board squares={Array(9).fill(null)} />);

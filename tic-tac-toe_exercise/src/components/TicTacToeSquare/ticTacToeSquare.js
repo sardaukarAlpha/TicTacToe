@@ -1,8 +1,8 @@
 import React from 'react';
 
-function TicTacToeSquare({value, onClick}){
+function TicTacToeSquare({className, value, onClick}){
     return(
-    <button className='square' onClick={onClick}>
+    <button className={className} onClick={onClick}>
         {value}
     </button>
     )

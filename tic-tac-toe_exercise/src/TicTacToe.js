@@ -23,6 +23,7 @@ function TicTacToe(){
     const renderSquare = (position) => {
         return (
           <TicTacToeSquare
+            className="square"
             value={squares[position]}
             onClick={() => {
               if (squares[position] != null || isWinner != null) {
