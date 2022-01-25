@@ -65,6 +65,14 @@ ol, ul {
   background: lightslategray;
   color:#404040;
   margin-left: 10px;
+  min-width: 200px;
+}
+
+.buttonPast{
+  background: linen;
+  color:#404040;
+  border:0;
+  margin-top: 5px;
 }
 
 .game-data {
