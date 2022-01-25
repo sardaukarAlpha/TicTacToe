@@ -3,6 +3,7 @@ import TicTacToeSquare from './components/TicTacToeSquare/ticTacToeSquare';
 import Title from './components/Title/title';
 import { defineWinner, isBoardFull  } from './components/common/common';
 import Restart from './components/Restart/restart';
+import Status from './components/Status/status';
 
 function TicTacToe(){
 
@@ -68,7 +69,7 @@ function TicTacToe(){
                     {renderSquare(8)}
                 </div>
             </div>
-            <div className="game-data">{getStatus()}</div>
+            <Status getStatus={()=>getStatus()} />
             <Restart onClick={() => restart()} />
         </div>
         <div className="history">
