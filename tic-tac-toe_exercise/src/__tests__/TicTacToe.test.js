@@ -23,10 +23,16 @@ describe("TicTacToe Testing", () => {
         const squareO = shallow(<TicTacToeSquare value="O" />);
         expect(squareO.text()).toEqual("O");
     });    
-    it("the board should contain 3 rows", () => {
+    test("the board should contain 3 rows", () => {
         const onClick = jest.fn();
         const wrapper = mount(<TicTacToeBoard onClick={onClick} />);
         expect(wrapper.find(".squareRow").length).toEqual(1);
+    });
+    test('if function passed to TicTacToe board component is executed', () => {
+        const onClick = jest.fn();
+        // eslint-disable-next-line no-unused-vars
+        const wrapper = shallow(<TicTacToeBoard onClick={onClick} />);
+        expect(onClick).toBeCalled();
     });
     
     // it("should render all the slots for the board", () => {
