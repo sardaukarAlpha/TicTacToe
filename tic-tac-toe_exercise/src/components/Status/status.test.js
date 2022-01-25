@@ -8,11 +8,9 @@ describe("Status component testing", () => {
         }
         shallow(<Status {...props} />);
     });
-    test('test if function passed to Status component is executed', () => {
-        const props = {
-            getStatus: jest.fn()
-        }
-        const wrapper = shallow(<Status {...props} />);
-        expect(wrapper.prop(getStatus)).toBeCalled();
+    test('if function passed to Status component is executed', () => {
+        const getStatus = jest.fn();
+        const wrapper = shallow(<Status getStatus={getStatus} />);
+        expect(getStatus).toBeCalled();
     });
 })
