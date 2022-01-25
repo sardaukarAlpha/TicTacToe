@@ -1,7 +1,10 @@
 body {
   font: 14px "Gill Sans Extrabold", Helvetica, sans-serif;
   margin: 25px;
-  background: #fffde7;
+}
+
+ol, ul {
+  padding-left: 30px;
 }
 
 .board-row:after {
@@ -10,53 +13,65 @@ body {
   display: table;
 }
 
-ol, ul {
-  padding-left: 35px;
-}
-
 .status {
   color: #424242;
   margin-bottom: 10px;
 }
 
-.squareRow {
-  color: #404040;
-  background: #fffde7;
-  border: 4px solid #BABABA;
+.square {
+  color: #424242;
+  background: #ff8085;
+  border: 4px solid #404040;
   float: left;
   font-size: 96px;
   font-weight: bold;
-  padding: 0;
-  text-align: center;
-  width: 136px;
-  line-height: 136px;
-  height: 136px;
   margin-right: -1px;
   margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 100px;
+  line-height: 100px;
+  height: 100px;
 }
+
+.square:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.15), 0 17px 50px 0 rgba(0,0,0,0.09);
+  background: #f0f0f1;
+}
+
 
 .square:focus {
   outline: none;
 }
 
-.square-navigation .square:focus {
+.kbd-navigation .square:focus {
   background: #ddd;
 }
 
 .wrapper {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
 .game-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  background: #ff8085;
+}
+
+.history{
+  background: lightslategray;
+  color:#404040;
+  margin-left: 10px;
 }
 
 .game-data {
-  font-size: 48px;
+  font-size: 20px;
   color: #424242;
   margin-top: 20px;
+  margin-left: 14px;
   text-align: center;
 }
 
@@ -65,23 +80,29 @@ ol, ul {
   text-align: center;
 }
 
+.restart:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 .restart:focus {
   outline: none;
 }
 
 .restart:active {
   box-shadow: 0 1px #424242;
+  transform: translateY(1px);
 }
 
 .restart {
-  transition-duration: 0.5s;
+  margin:10px;
+  transition-duration: 0.4s;
   background-color: #424242;
   color: #fffde7;
   border: none;
   font-size: 24px;
-  text-align: center;
-  border-radius: 4px;
   line-height: 48px;
   height: 48px;
   width: 40%;
+  text-align: center;
+  border-radius: 4px;
 }

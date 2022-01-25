@@ -13,23 +13,17 @@ export const defineWinner = (squares) => {
     for (let i = 0; i < optionLines.length; i++) {
       const [a, b, c] = optionLines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return {
-          winner: squares[a],
-          winLine: optionLines[i],
-          isDraw: false,
-        };
+        return squares[a];
       }
     }
-    let isDraw = true;
+    return null;
+  }
+
+  export const isBoardFull = (squares) => {
     for (let i = 0; i < squares.length; i++) {
-      if (squares[i] === null) {
-        isDraw = false;
-        break;
+      if (squares[i] == null) {
+        return false;
       }
     }
-    return {
-      winner: null,
-      winLine: null,
-      isDraw: isDraw,
-    };
+    return true;
   }

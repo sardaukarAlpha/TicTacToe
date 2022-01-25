@@ -1,16 +1,15 @@
 import React from 'react';
 
-function TicTacToeSquare(props){
-
-    const { value, onChange } = props;
-
+function TicTacToeSquare({value, onClick}){
     return(
-    <button className='square' onClick={onChange}>
+    <button className='square' onClick={onClick}>
         {value}
     </button>
     )
 }
 
 export default TicTacToeSquare;
+
+
 
 
