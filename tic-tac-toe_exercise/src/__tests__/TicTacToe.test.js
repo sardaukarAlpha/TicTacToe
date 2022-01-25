@@ -36,7 +36,11 @@ describe("TicTacToe Testing", () => {
     });
     
     test("should render all the slots for the board", () => {
-        expect(TicTacToeSquare.find(".square").exists()).toBeTruthy();
+        const classy = 'square';
+        const value = 'X';
+        const onClick = jest.fn();
+        const wrapper = shallow(<TicTacToeSquare className={classy} value={value} onClick={onClick} />)
+        expect(wrapper.find(".square").exists()).toBeTruthy();
     });
     
     // it("should have nine squares", () => {
