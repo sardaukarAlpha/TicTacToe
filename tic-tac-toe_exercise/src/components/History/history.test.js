@@ -1,5 +1,5 @@
 import History from "./history";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 describe("History component testing", () => {
     test('renders History component without crashing', () => {
@@ -12,7 +12,8 @@ describe("History component testing", () => {
     test('if function passed to History component is executed', () => {
         const goToPosition = jest.fn();
         // eslint-disable-next-line no-unused-vars
-        const wrapper = shallow(<History goToPosition={goToPosition} />);
+        const options = [null, null, null];
+        const wrapper = mount(<History history={options} goToPosition={goToPosition()} />);
         expect(goToPosition).toBeCalled();
     });
 })
