@@ -10,5 +10,9 @@ describe("TicTacToe Testing", () => {
         const squareX = shallow(<TicTacToeSquare value="X" />);
         expect(squareX.text()).toEqual("X");
     });
+    test("should have value as O when it is O ", () => {
+        const squareX = shallow(<TicTacToeSquare value="O" />);
+        expect(squareX.text()).toEqual("O");
+    });
 })
 
