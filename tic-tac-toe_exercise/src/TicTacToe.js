@@ -13,7 +13,6 @@ function TicTacToe(){
     const [ shouldBeX, setXNext ] = useState(true);
     const nextSymbol = shouldBeX ? "X" : "O";
     const isWinner = defineWinner(squares);
-    console.table(squares);
 
     const renderSquare = (position) => {
         return (
