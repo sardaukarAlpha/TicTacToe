@@ -8,6 +8,6 @@ describe("title testing", () => {
     test('renders a button with text of restart', () => {
         const titleText = "Tic tac toe game, let's play!";
         const wrapper = mount(<Title title={titleText} />);
-        expect(wrapper.prop('title')).toBe("Tic tac toe game, let's play!");
+        expect(wrapper.prop('title')).toBe(titleText);
     });
 })

@@ -5,8 +5,6 @@ import TicTacToeBoard from "../components/TicTacToeBoard/ticTacToeBoard";
 import { shallow, mount } from "enzyme";
 
 describe("TicTacToe Testing", () => {
-    const setState = jest.fn();
-    const useStateMock = (initState) => [initState, setState];
     
     afterEach(() => {
         jest.clearAllMocks();
@@ -43,11 +41,6 @@ describe("TicTacToe Testing", () => {
         expect(wrapper.find(".square").exists()).toBeTruthy();
     });
     
-    test("should have nine squares", () => {
-        const wrapper = mount(<TicTacToeBoard squares={Array(9).fill(null)} />);
-    
-    //     expect(board.find("#squareDiv").length).toEqual(9);
-    // });
     // test("initializes the square state with null", () => {
     //     jest.spyOn(React, 'useState').mockImplementation(useStateMock);
     //     // eslint-disable-next-line no-unused-vars
