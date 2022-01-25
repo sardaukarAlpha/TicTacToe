@@ -1,13 +1,87 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font: 14px "Gill Sans Extrabold", Helvetica, sans-serif;
+  margin: 25px;
+  background: #fffde7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+ol, ul {
+  padding-left: 35px;
+}
+
+.status {
+  color: #424242;
+  margin-bottom: 10px;
+}
+
+.squareRow {
+  color: #404040;
+  background: #fffde7;
+  border: 4px solid #BABABA;
+  float: left;
+  font-size: 96px;
+  font-weight: bold;
+  padding: 0;
+  text-align: center;
+  width: 136px;
+  line-height: 136px;
+  height: 136px;
+  margin-right: -1px;
+  margin-top: -1px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.square-navigation .square:focus {
+  background: #ddd;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-data {
+  font-size: 48px;
+  color: #424242;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.restart-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.restart:focus {
+  outline: none;
+}
+
+.restart:active {
+  box-shadow: 0 1px #424242;
+}
+
+.restart {
+  transition-duration: 0.5s;
+  background-color: #424242;
+  color: #fffde7;
+  border: none;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 4px;
+  line-height: 48px;
+  height: 48px;
+  width: 40%;
 }
