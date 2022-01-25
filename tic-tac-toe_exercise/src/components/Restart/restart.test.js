@@ -7,6 +7,6 @@ describe("restart button testing", () => {
     });
     test('renders a button with text of restart', () => {
         const wrapper = shallow(<Restart />);
-        expect(wrapper.find('restart-btn').text()).toBe('Restart');
+        expect(wrapper.find('#restart-btn').text()).toBe('restart');
     });
 })
