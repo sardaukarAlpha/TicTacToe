@@ -44,7 +44,6 @@ function TicTacToe(){
     }
 
     const goToPosition = (step) => {
-        debugger;
         setStepNo(step);
         setXNext(step % 2  === 0 );
     }
