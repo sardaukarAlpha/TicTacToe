@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TicTacToeSquare from './components/TicTacToeSquare/ticTacToeSquare';
 import TicTacToeBoard from './components/TicTacToeBoard/ticTacToeBoard';
 import Title from './components/Title/title';
