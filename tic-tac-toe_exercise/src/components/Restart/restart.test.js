@@ -9,4 +9,7 @@ describe("restart button testing", () => {
         const wrapper = shallow(<Restart />);
         expect(wrapper.find('#restart-btn').text()).toBe('restart');
     });
+    test('check if restart button, reset to initial state squares and history objects', () => {
+        
+    })
 })
