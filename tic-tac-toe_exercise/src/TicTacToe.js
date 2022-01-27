@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import TicTacToeSquare from './components/TicTacToeSquare/ticTacToeSquare';
 import TicTacToeBoard from './components/TicTacToeBoard/ticTacToeBoard';
 import Title from './components/Title/title';
@@ -12,32 +12,32 @@ function TicTacToe(){
     const INIT_HISTORY = [{
         squares: Array(9).fill(null),
     }];
-    const [ squares, setSquares ] = useState(Array(9).fill(null));
     const [history, setHistory ] = useState(INIT_HISTORY);
     const title = "Tic tac toe game, let's play!";
     const [ shouldBeX, setXNext ] = useState(true);
     const [stepNo, setStepNo] = useState(0);
     const nextSymbol = shouldBeX ? "X" : "O";
-    const isWinner = defineWinner(squares);
+    const isWinner = defineWinner(history[stepNo].squares);
+
+    const handleClick = (position) => {
+      const pastMoves = history.slice(0, stepNo + 1);
+      const current = [...pastMoves[stepNo].squares];
+      if (current[position] !== null || isWinner != null) {
+        return;
+      }
+      current[position] = shouldBeX ? 'X' : 'O';
+      setHistory([...pastMoves, {squares: current}]);
+      setXNext(!shouldBeX);
+      setStepNo(pastMoves.length);
+    }
 
     const renderSquare = (position) => {
         return (
           <TicTacToeSquare
             className="square"
-            value={squares[position]}
+            value={history[stepNo].squares[position]}
             onClick={() => {
-              if (squares[position] != null || isWinner != null) {
-                return;
-              }
-              const pastMoves = history.slice(0, stepNo + 1);
-              const current = [...pastMoves[stepNo].squares];
-              current[position] = shouldBeX ? 'X' : 'O';
-              setHistory([...pastMoves, {squares: current}]);
-              setStepNo(pastMoves.length);
-              const tmpSquares = [...squares];
-              tmpSquares[position] = nextSymbol;
-              setSquares(tmpSquares);
-              setXNext(!shouldBeX);
+              handleClick(position)
             }}
           />
         );
@@ -51,7 +51,7 @@ function TicTacToe(){
       function getStatus() {
         if (isWinner) {
           return "Winner: " + isWinner;
-        } else if (isBoardFull(squares)) {
+        } else if (isBoardFull(history[stepNo].squares)) {
           return "Draw!";
         } else {
           return "It's Your Turn Next: " + nextSymbol;
@@ -59,7 +59,6 @@ function TicTacToe(){
       }
     
     const restart = () =>{
-        setSquares(Array(9).fill(null));
         setXNext(true);
         setHistory(INIT_HISTORY);
         setStepNo(0);
